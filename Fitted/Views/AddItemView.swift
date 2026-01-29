@@ -4,6 +4,8 @@
 //
 //  Created by Joshua  Evans  on 1/28/26.
 //
+
+//TODO: NEED TO RESOLVE THE TAKING PHOTO ERRORS, PHOTOS NOT SHOWING UP AFTER TAKING PHOTO
 import SwiftUI
 struct AddItemView: View {
     @Environment(\.presentationMode) var presentationMode
