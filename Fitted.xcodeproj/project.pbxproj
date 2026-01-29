@@ -7,12 +7,25 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		0299ABE02F2AAC1A002D9139 /* Fitted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitted.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0213337D2F2B4CF8003DEA6F /* Fitted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitted.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		021333842F2B5421003DEA6F /* Exceptions for "Fitted" folder in "Fitted" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 0299ABDF2F2AAC1A002D9139 /* Fitted */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		0299ABE22F2AAC1A002D9139 /* Fitted */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				021333842F2B5421003DEA6F /* Exceptions for "Fitted" folder in "Fitted" target */,
+			);
 			path = Fitted;
 			sourceTree = "<group>";
 		};
@@ -33,16 +46,8 @@
 			isa = PBXGroup;
 			children = (
 				0299ABE22F2AAC1A002D9139 /* Fitted */,
-				0299ABE12F2AAC1A002D9139 /* Products */,
+				0213337D2F2B4CF8003DEA6F /* Fitted.app */,
 			);
-			sourceTree = "<group>";
-		};
-		0299ABE12F2AAC1A002D9139 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0299ABE02F2AAC1A002D9139 /* Fitted.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -67,7 +72,7 @@
 			packageProductDependencies = (
 			);
 			productName = Fitted;
-			productReference = 0299ABE02F2AAC1A002D9139 /* Fitted.app */;
+			productReference = 0213337D2F2B4CF8003DEA6F /* Fitted.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -95,7 +100,7 @@
 			mainGroup = 0299ABD72F2AAC1A002D9139;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 0299ABE12F2AAC1A002D9139 /* Products */;
+			productRefGroup = 0299ABD72F2AAC1A002D9139;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -251,8 +256,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 42A6JV7HWD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Fitted/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to the camera to take photos of your clothes.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to select clothing images.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -282,8 +291,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 42A6JV7HWD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Fitted/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need access to the camera to take photos of your clothes.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need access to your photo library to select clothing images.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
