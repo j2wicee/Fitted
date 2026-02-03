@@ -14,8 +14,12 @@ struct WardrobeGridView: View {
     var body: some View {
         ScrollView{
             LazyVGrid(columns: columns, spacing: 12){
-                ForEach(wardrobe.items) { item in
-                    ClothingTile(item: item)
+                ForEach($wardrobe.items) { $item in
+                    NavigationLink{
+                        ClothingDetailView(item: $item)
+                    } label:{
+                        ClothingTile(item: item)
+                    }
                 }
             }
             .padding()
