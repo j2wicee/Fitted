@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var wardrobe = Wardrobe()
     @State private var showingAddItem = false
-    
     
     var body: some View {
         NavigationStack{
@@ -24,10 +22,8 @@ struct ContentView: View {
                 }
                 .sheet(isPresented: $showingAddItem){
                     AddItemView()
-                        .environmentObject(wardrobe)
                 }
         }
-        .environmentObject(wardrobe)
     }
 }
 

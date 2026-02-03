@@ -7,11 +7,16 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 struct ClothingDetailView: View {
-    @Binding var item: ClothingItem
-
+    @Bindable var item: ClothingItem
+    
     @State private var isEditing = false
+    @State private var showDeleteAlert = false
+    
+    @Environment(\.modelContext) private var context
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         ScrollView {
@@ -137,15 +142,45 @@ struct ClothingDetailView: View {
                 )
             }
             .padding()
+            
+            Button(role: .destructive){
+                showDeleteAlert = true
+            } label: {
+                Label("Delete Item", systemImage: "trash")
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(Color.red.opacity(0.1))
+                    .foregroundColor(.red)
+                    .cornerRadius(12)
+            }
+            .buttonStyle(.plain)
+            .padding()
         }
-        .navigationTitle("Item")
+        .navigationTitle(item.name)
+        .alert("Delete Item", isPresented: $showDeleteAlert){
+            Button("Cancel", role: .cancel){}
+            Button("Delete", role: .destructive){
+                deleteItem()
+            }
+        } message: {
+            Text("Are you sure you want to delete this item? This cannot be undone.")
+        }
         .toolbar {
             Button("Edit") {
                 isEditing = true
             }
+            
         }
         .sheet(isPresented: $isEditing) {
-            EditClothingView(item: $item)
+            EditClothingView(item: item)
         }
     }
+    private func deleteItem(){
+        context.delete(item)
+            dismiss()
+        
+    }
 }
+
+
+

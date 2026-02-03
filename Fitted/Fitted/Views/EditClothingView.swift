@@ -1,6 +1,8 @@
 import SwiftUI
+import SwiftData
+
 struct EditClothingView: View {
-    @Binding var item: ClothingItem
+    @Bindable var item: ClothingItem
     @Environment(\.dismiss) var dismiss
 
     var body: some View {

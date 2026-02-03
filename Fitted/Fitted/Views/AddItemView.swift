@@ -8,10 +8,12 @@
 //TODO: NEED TO RESOLVE THE TAKING PHOTO ERRORS, PHOTOS NOT SHOWING UP AFTER TAKING PHOTO
 import SwiftUI
 import PhotosUI
+import SwiftData
+
 struct AddItemView: View {
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var wardrobe: Wardrobe
-    
+    @Environment(\.modelContext) private var context
+
     @State private var selectedItem: PhotosPickerItem?
     @State private var selectedImage: UIImage?
     @State private var showImagePicker: Bool = false
@@ -79,32 +81,34 @@ struct AddItemView: View {
                     }
                     
                         ColorPicker("Color", selection: $color)
-                        Picker("Size", selection: $size) {
-                            ForEach(ClothingSize.allCases, id: \.self) { size in
-                                Text(size.rawValue).tag(size)
-                            }
-                        }
-                    
-                    .navigationTitle("Add Item")
-                    .toolbar{
-                        ToolbarItem(placement: .confirmationAction){
-                            Button("Save"){
-                                let newItem = ClothingItem(name: name, type: type, color: color, size: size, image: selectedImage)
-                                wardrobe.addItem(newItem)
-                                presentationMode.wrappedValue.dismiss()
-                            }
-                            
-                        }
-                        ToolbarItem(placement:.cancellationAction){
-                            Button("Cancel"){
-                                presentationMode.wrappedValue.dismiss()
-                            }
+                    Picker("Size", selection: $size) {
+                        ForEach(ClothingSize.allCases, id: \.self) { size in
+                            Text(size.rawValue).tag(size)
                         }
                     }
                 }
             }
-            
+            .navigationTitle("Add Item")
+            .toolbar{
+                ToolbarItem(placement: .confirmationAction){
+                    Button("Save"){
+                        let newItem = ClothingItem(
+                            name: name,
+                            type: type,
+                            size: size,
+                            color: color,
+                            image: selectedImage
+                        )
+                        context.insert(newItem)
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+                ToolbarItem(placement:.cancellationAction){
+                    Button("Cancel"){
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                }
+            }
         }
-        
     }
 }

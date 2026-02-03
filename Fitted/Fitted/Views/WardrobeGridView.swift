@@ -6,20 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 struct WardrobeGridView: View {
-    @EnvironmentObject var wardrobe: Wardrobe
+    @Query var items: [ClothingItem]
     let columns = [
         GridItem(.adaptive(minimum: 110), spacing: 12)
     ]
     var body: some View {
         ScrollView{
             LazyVGrid(columns: columns, spacing: 12){
-                ForEach($wardrobe.items) { $item in
+                ForEach(items) { item in
                     NavigationLink{
-                        ClothingDetailView(item: $item)
+                        ClothingDetailView(item: item)
                     } label:{
                         ClothingTile(item: item)
                     }
+                    .buttonStyle(.plain)
                 }
             }
             .padding()
