@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 struct WardrobeGridView: View {
-    @Query var items: [ClothingItem]
+    let items : [ClothingItem]
     let columns = [
         GridItem(.adaptive(minimum: 110), spacing: 12)
     ]

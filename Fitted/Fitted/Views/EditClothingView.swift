@@ -1,3 +1,8 @@
+// EditClothingView.swift
+// Creates a view so that users can edit clothing items after adding them to the wardrobe.
+
+
+
 import SwiftUI
 import SwiftData
 

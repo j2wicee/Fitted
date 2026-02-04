@@ -2,7 +2,7 @@
 //  ImagePicker.swift
 //  Fitted
 //
-//  Created by Joshua  Evans  on 1/29/26.
+//  This file allows the user to use the camera to take pictures of clothing items
 //
 
 import SwiftUI

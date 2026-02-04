@@ -8,21 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var showingAddItem = false
-    
     var body: some View {
         NavigationStack{
-            WardrobeGridView()
-                .toolbar{
-                    ToolbarItem(placement: .navigationBarTrailing){
-                        Button(action: {showingAddItem = true}){
-                            Image(systemName: "plus")
-                        }
-                    }
-                }
-                .sheet(isPresented: $showingAddItem){
-                    AddItemView()
-                }
+            WardrobeView()
         }
     }
 }
