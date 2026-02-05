@@ -18,6 +18,13 @@ class ClothingItem {
     var size: ClothingSize
     var colorHex: String
     var imageData: Data?
+    
+    // Relationship: A clothing item can belong to multiple outfits
+    // This is the "inverse" side of the relationship defined in Outfit
+    // SwiftData automatically maintains bidirectional relationships
+    // Note: We don't specify inverse here - it's defined on Outfit.items
+    @Relationship(deleteRule: .nullify)
+    var outfits: [Outfit] = []
 
     // Convenience, non‑persisted properties that bridge to the stored values
     @Transient

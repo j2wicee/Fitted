@@ -14,6 +14,6 @@ struct FittedApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: [ClothingItem.self])
+        .modelContainer(for: [ClothingItem.self, Outfit.self])
     }
 }
